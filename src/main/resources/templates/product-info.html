@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+
+<head th:replace="layout::head">
+</head>
+
+<body>
+
+	<header th:replace="layout::header"> </header>
+
+	<div th:replace="fashion::header-shop"></div>
+
+	<div class="single-product-area">
+		<div class="zigzag-bottom"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="single-sidebar">
+						<h3 class="sidebar-title">Tìm Sản Phẩm</h3>
+						<form action="">
+							<input type="text" placeholder="Tìm sản phẩm..." /> <input
+								type="submit" value="Search" />
+						</form>
+					</div>
+
+					<div class="single-sidebar">
+						<h3 class="sidebar-title">Sản phẩm tương tự</h3>
+						<div class="thubmnail-recent">
+							<img src="../static/img/product-thumb-1.jpg"
+								th:src="@{/img/product-thumb-1.jpg}" class="recent-thumb" alt="" />
+							<h2>
+								<a href="">Sony Smart TV - 2015</a>
+							</h2>
+							<div class="product-sidebar-price">
+								<ins>$700.00</ins>
+								<del>$100.00</del>
+							</div>
+						</div>
+						<div class="thubmnail-recent">
+							<img src="../static/img/product-thumb-1.jpg"
+								th:src="@{/img/product-thumb-1.jpg}" class="recent-thumb" alt="" />
+							<h2>
+								<a href="">Sony Smart TV - 2015</a>
+							</h2>
+							<div class="product-sidebar-price">
+								<ins>$700.00</ins>
+								<del>$100.00</del>
+							</div>
+						</div>
+						<div class="thubmnail-recent">
+							<img src="../static/img/product-thumb-1.jpg"
+								th:src="@{/img/product-thumb-1.jpg}" class="recent-thumb" alt="" />
+							<h2>
+								<a href="">Sony Smart TV - 2015</a>
+							</h2>
+							<div class="product-sidebar-price">
+								<ins>$700.00</ins>
+								<del>$100.00</del>
+							</div>
+						</div>
+						<div class="thubmnail-recent">
+							<img src="../static/img/product-thumb-1.jpg"
+								th:src="@{/img/product-thumb-1.jpg}" class="recent-thumb" alt="" />
+							<h2>
+								<a href="">Sony Smart TV - 2015</a>
+							</h2>
+							<div class="product-sidebar-price">
+								<ins>$700.00</ins>
+								<del>$100.00</del>
+							</div>
+						</div>
+					</div>
+
+					<div class="single-sidebar">
+						<h2 class="sidebar-title">Các sản phẩm mới</h2>
+						<ul>
+							<li><a href="">Sony Smart TV - 2015</a></li>
+							<li><a href="">Sony Smart TV - 2015</a></li>
+							<li><a href="">Sony Smart TV - 2015</a></li>
+							<li><a href="">Sony Smart TV - 2015</a></li>
+							<li><a href="">Sony Smart TV - 2015</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-8">
+					<div class="product-content-right">
+						<div class="product-breadcroumb">
+							<a href="">Trang chủ</a> <a href="">Điện máy</a> <a href="">Sony
+								Smart TV - 2015</a>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="product-images">
+									<div class="product-main-img">
+										<img src="../static/img/product-1.jpg"
+											th:src="@{/img/product-1.jpg}" alt="" />
+									</div>
+
+									<div class="product-gallery">
+										<img src="../static/img/product-thumb-1.jpg"
+											th:src="@{/img/product-thumb-1.jpg}" alt="" /> <img
+											src="../static/img/product-thumb-2.jpg"
+											th:src="@{/img/product-thumb-2.jpg}" alt="" /> <img
+											src="../static/img/product-thumb-3.jpg"
+											th:src="@{/img/product-thumb-3.jpg}" alt="" />
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="product-inner" th:object="${product}">
+									<h2 class="product-name" th:text="${product.name}"></h2>
+									<div class="product-inner-price">
+										<ins th:text="${product.price}"></ins>
+										<!-- <div th:unless="${product.discount}">
+											<del th:text="${product.discount}"></del>
+										</div>
+ -->
+									</div>
+									<div class="row">
+										<div style="padding-left: 0; padding-right: 0">
+											<form action="#" method="POST"
+												th:action="@{/bookDoctor/addGroupMetadata/{id}(id=${product.id})}"
+												th:object="${productDetails}" class="cart">
+
+												<div class="quantity" style="padding-top: 5px">
+													<label for="num">Số lượng </label> <input id="num"
+														type="number" size="4" class="input-text qty text"
+														title="Qty" value="1" name="noOfItem" min="1" step="1" />
+												</div>
+												<div class="màu sắc">
+													<label>Màu sắc</label> <select name="color">
+														<option th:each="productDetails: ${product.productDetails}" th:text="${productDetails.color}"  th:value="${productDetails.color}" ></option>
+													</select>
+												</div>
+												<div class="size">
+													<label>Kích thước</label> <select name="size">
+														<option  th:each="productDetails: ${product.productDetails}" th:value="${productDetails.size}" th:text="${productDetails.size}"></option>
+													</select>
+												</div>
+												<div class="col-sm-6"
+													style="padding-left: 0; padding-right: 0; padding-top: 5px">
+													<button class="add_to_cart_button" type="submit"
+														name="action" value="check-out">Đặt mua</button>
+												</div>
+												<div class="col-sm-6"
+													style="padding-left: 0; padding-right: 0; padding-top: 5px">
+													<button class="add_to_cart_button" name="action"
+														value="add-cart" type="submit"
+														style="background-color: #fa8072">Thêm giỏ hàng</button>
+												</div>
+											</form>
+										</div>
+
+
+
+									</div>
+									<div class="product-inner-category" style="padding-top: 5px">
+										<p>
+											Loại: <a href="">Đồ gia dụng</a>. Tags: <a href="">Tốt
+												nhất</a>, <a href="">Giảm giá</a>, <a href="">Cửa hàng</a>.
+										</p>
+									</div>
+
+									<div role="tabpanel">
+										<ul class="product-tab" role="tablist">
+											<li role="presentation" class="active"><a href="#home"
+												aria-controls="home" role="tab" data-toggle="tab">Mô tả</a>
+											</li>
+											<li role="presentation"><a href="#profile"
+												aria-controls="profile" role="tab" data-toggle="tab">Đánh
+													giá</a></li>
+										</ul>
+										<div class="tab-content">
+											<div role="tabpanel" class="tab-pane fade in active"
+												id="home">
+												<h2>Mô tả sản phẩm</h2>
+												<p></p>
+
+												<p></p>
+											</div>
+											<div role="tabpanel" class="tab-pane fade" id="profile">
+												<h2>Đánh giá</h2>
+												<div class="submit-review">
+													<p>
+														<label for="name">Tên</label> <input name="name"
+															type="text" />
+													</p>
+													<p>
+														<label for="email">Email</label> <input name="email"
+															type="email" />
+													</p>
+													<div class="rating-chooser">
+														<p>Đánh giá của bạn</p>
+
+														<div class="rating-wrap-post">
+															<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+																class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+																class="fa fa-star"></i>
+														</div>
+													</div>
+													<p>
+														<label for="review">Nhận xét</label>
+														<textarea name="review" id="" cols="30" rows="10"></textarea>
+													</p>
+													<p>
+														<button class="add_to_cart_button" type="submit">Gửi</button>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+
+						<div class="related-products-wrapper">
+							<h2 class="related-products-title">Các sản phẩm liên quan</h2>
+							<div class="related-products-carousel">
+								<div class="single-product">
+									<div class="product-f-image">
+										<img src="../static/img/product-1.jpg"
+											th:src="@{/img/product-1.jpg}" alt="" />
+										<div class="product-hover">
+											<a href="" class="add-to-cart-link"> <i
+												class="fa fa-shopping-cart"></i> Thêm giỏ hàng
+											</a> <a href="" class="view-details-link"> <i
+												class="fa fa-link"></i> Xem chi tiết
+											</a>
+										</div>
+									</div>
+
+									<h2>
+										<a href="">Sony Smart TV - 2015</a>
+									</h2>
+
+									<div class="product-carousel-price">
+										<ins>$700.00</ins>
+										<del>$100.00</del>
+									</div>
+								</div>
+								<div class="single-product">
+									<div class="product-f-image">
+										<img src="../static/img/product-2.jpg"
+											th:src="@{/img/product-2.jpg}" alt="" />
+										<div class="product-hover">
+											<a href="" class="add-to-cart-link"> <i
+												class="fa fa-shopping-cart"></i> Thêm giỏ hàng
+											</a> <a href="" class="view-details-link"> <i
+												class="fa fa-link"></i> Xem chi tiết
+											</a>
+										</div>
+									</div>
+
+									<h2>
+										<a href="">Apple new mac book 2015 March </a>
+									</h2>
+									<div class="product-carousel-price">
+										<ins>$899.00</ins>
+										<del>$999.00</del>
+									</div>
+								</div>
+								<div class="single-product">
+									<div class="product-f-image">
+										<img src="../static/img/product-3.jpg"
+											th:src="@{/img/product-3.jpg}" alt="" />
+										<div class="product-hover">
+											<a href="" class="add-to-cart-link"> <i
+												class="fa fa-shopping-cart"></i> Thêm giỏ hàng
+											</a> <a href="" class="view-details-link"> <i
+												class="fa fa-link"></i> Xem chi tiết
+											</a>
+										</div>
+									</div>
+
+									<h2>
+										<a href="">Apple new i phone 6</a>
+									</h2>
+
+									<div class="product-carousel-price">
+										<ins>$400.00</ins>
+										<del>$425.00</del>
+									</div>
+								</div>
+								<div class="single-product">
+									<div class="product-f-image">
+										<img src="../static/img/product-4.jpg"
+											th:src="@{/img/product-4.jpg}" alt="" />
+										<div class="product-hover">
+											<a href="" class="add-to-cart-link"> <i
+												class="fa fa-shopping-cart"></i> Thêm giỏ hàng
+											</a> <a href="" class="view-details-link"> <i
+												class="fa fa-link"></i> Xem chi tiết
+											</a>
+										</div>
+									</div>
+
+									<h2>
+										<a href="">Sony playstation microsoft</a>
+									</h2>
+
+									<div class="product-carousel-price">
+										<ins>$200.00</ins>
+										<del>$225.00</del>
+									</div>
+								</div>
+								<div class="single-product">
+									<div class="product-f-image">
+										<img src="../static/img/product-5.jpg"
+											th:src="@{/img/product-5.jpg}" alt="" />
+										<div class="product-hover">
+											<a href="" class="add-to-cart-link"> <i
+												class="fa fa-shopping-cart"></i> Thêm giỏ hàng
+											</a> <a href="" class="view-details-link"> <i
+												class="fa fa-link"></i> Xem chi tiết
+											</a>
+										</div>
+									</div>
+
+									<h2>
+										<a href="">Sony Smart Air Condtion</a>
+									</h2>
+
+									<div class="product-carousel-price">
+										<ins>$1200.00</ins>
+										<del>$1355.00</del>
+									</div>
+								</div>
+								<div class="single-product">
+									<div class="product-f-image">
+										<img src="../static/img/product-6.jpg"
+											th:src="@{/img/product-6.jpg}" alt="" />
+										<div class="product-hover">
+											<a href="" class="add-to-cart-link"> <i
+												class="fa fa-shopping-cart"></i> Thêm giỏ hàng
+											</a> <a href="" class="view-details-link"> <i
+												class="fa fa-link"></i> Xem chi tiết
+											</a>
+										</div>
+									</div>
+
+									<h2>
+										<a href="">Samsung gallaxy note 4</a>
+									</h2>
+
+									<div class="product-carousel-price">
+										<ins>$400.00</ins>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer th:replace="layout::footer"> </footer>
+	<!--<script src="https://code.jquery.com/jquery.min.js" th:src="@{/jquery.min.js}"></script>-->
+	<script src="../static/js/jquery-2.1.1.js"
+		th:src="@{/js/jquery-2.1.1.js}"></script>
+	<!-- Bootstrap JS form CDN -->
+	<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" th:src="@{/bootstrap/3.2.0/js/bootstrap.min.js}" ></script>-->
+	<script src="../static/js/bootstrap.min.js"
+		th:src="@{/js/bootstrap.min.js}"></script>
+	<!-- jQuery sticky menu -->
+	<script src="../static/js/owl.carousel.min.js"
+		th:src="@{/js/owl.carousel.min.js}"></script>
+	<script src="../static/js/jquery.sticky.js"
+		th:src="@{/js/jquery.sticky.js}"></script>
+
+	<!-- jQuery easing -->
+	<script src="../static/js/jquery.easing.1.3.min.js"
+		th:src="@{/js/jquery.easing.1.3.min.js}"></script>
+
+	<!-- Main Script -->
+	<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="index :: head">
+</head>
+<body>
+<header th:replace="adminIndex::header"></header>
+<section style="background-color: whitesmoke">
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1" style="margin-top: 15%" >
+      <div class="listQuestions">
+          <h3 style="text-align: center; font-size: 30px">Các câu hỏi chờ xử lí</h3>
+          <table class="table table-bordered" th:object="${questions}">
+            <thead>
+            <tr>
+              <th>STT</th>
+              <th>Người hỏi</th>
+              <th>Số điện thoại</th>
+              <th>Email</th>
+              <th>Nội dung</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="qs, iterStat : ${questions}">
+              <td th:text="${iterStat.count}"></td>
+              <td th:text="${qs.userName}"></td>
+              <td th:text="${qs.phone}"></td>
+              <td th:text="${qs.email}"></td>
+              <td th:text="${qs.content}"></td>
+              <td>
+                <a th:href="@{/bookDoctor/admin/selectDoctor/{id}(id=${qs.id})}"><button class="btn btn-primary btn-xs"><i class="fa fa-check"></i></button></a>
+                <a th:href="@{/bookDoctor/admin/mailForAsk/{id}(id=${qs.id})}"><button class="btn btn-success btn-xs" ><i class="fa fa-envelope-o"></i></button></a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="../static/js/jquery-2.1.1.js" th:src="@{/js/jquery-2.1.1.js}"></script>
+<script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

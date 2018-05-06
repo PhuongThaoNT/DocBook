@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="index :: head">
+</head>
+<body>
+<header th:replace="adminIndex::header"></header>
+<section style="background-color: whitesmoke">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2" >
+      <div class="contact-caption clearfix" style="margin-top: 30%; margin-bottom: 5%;background-color: white">
+        <div class="col-md-10 col-md-offset-1 contact-form">
+          <form class="form-horizontal" th:action="@{/bookDoctor/admin/setDoctorAnswer}" method="POST" th:object="${question}">
+            <input type="hidden" name="userName" th:value="${question.userName}" />
+            <input type="hidden" name="phone" th:value="${question.phone}" />
+            <input type="hidden" name="email" th:value="${question.email}" />
+            <input type="hidden" name="content" th:value="${question.content}" />
+            <div class="form-group">
+              <input type="text" name="respondent" style="border: none; margin-top: 3%" placeholder="Nhập tên bác sĩ" />
+            </div>
+            <div class="form-group">
+              <input class="submit-btn" type="submit" value="Gửi"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:fragment="control-head">
+
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+    
+    
+<!-- Latest jQuery form server -->
+<script src="../static/js/jquery-2.1.1.js"
+	th:src="@{/js/jquery-2.1.1.js}"></script>
+	
+<script src="../static/js/bootstrap.min.js"
+	th:src="@{/js/bootstrap.min.js}"></script>
+	
+<link rel="stylesheet" href="../static/css/fashion.css"
+	th:href="@{/css/userLayout.css}" />
+	
+<!-- Main Script -->
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+
+</head>
+
+<body>
+	<div id="wrapper" th:fragment="control-menu">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav" style="margin-left: 0;">
+				<li class="sidebar-brand"><a href="#menu-toggle"
+					id="menu-toggle" style="margin-top: 20px; float: right;"> <i
+						class="fa fa-bars "></i>
+				</a></li>
+				<li><a href="#"> <i class="fa fa-home" aria-hidden="true"
+						title="Trang chủ"></i> <span class="tooltiptext tooltip-right">
+							Trang chủ</span>
+				</a></li>
+				<li><a href="#"><i class="fa fa-sort-alpha-asc "
+						aria-hidden="true" title="Sắp xếp"> </i> <span
+						style="margin-left: 10px;">Sắp xếp</span> </a></li>
+
+				<li><a href="#"> <i class="fa fa-plane" aria-hidden="true"
+						title="Đơn chưa chuyển"> </i> <span style="margin-left: 10px;">
+							Đơn chưa chuyển</span>
+				</a></li>
+				<li><a href="#"> <i class="fa fa-user" aria-hidden="true"
+						title="Tài khoản"> </i> <span style="margin-left: 10px;">
+							Tài khoản</span>
+				</a></li>
+				<li><a href="#"> <i class="fa fa-comment-o"
+						aria-hidden="true" title="Tin nhắn"> </i> <span
+						style="margin-left: 10px;"> Tin nhắn</span>
+				</a></li>
+				<li><a href="login.html" th:href="@{/bookDoctor/login}"> <i class="fa fa-sign-out"
+						aria-hidden="true" title="Đăng xuất"> </i> <span
+						style="margin-left: 10px;"> Đăng xuất</span>
+				</a></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+		<script>
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+			});
+		</script>
+
+
+	</div>
+</body>
+</html>

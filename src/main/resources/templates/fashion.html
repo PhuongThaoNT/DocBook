@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head th:replace="layout::head">
+
+</head>
+
+<body>
+<link rel="stylesheet" href="../static/css/fashion.css" th:href="@{/css/fashion.css}"/>
+<header th:replace="layout::header">
+</header>
+
+<!--<th:block th:if="${products.isEmpty()}">-->
+    <!--<h3>No Product</h3>-->
+<!--</th:block>-->
+<th:block>
+<div  th:fragment="header-shop" class="brands-area" style="max-height: 110px; padding-top: 0%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <marquee id="marq" scrollamount="3" direction="left" loop="50" scrolldelay="0" onmouseover="this.stop()" onmouseout="this.start()">
+                <div class="brand-list" style="padding-top: 0%">
+                    <a><img src="../static/img/logo/dg.png" th:src="@{/img/logo/dg.png}" alt="" style="max-height: 100px" /></a>
+                        <a><img src="../static/img/logo/gucci.png" th:src="@{/img/logo/gucci.png}" alt="" style="max-height: 100px" /></a>
+                        <a><img src="../static/img/logo/zara.jpg" th:src="@{/img/logo/zara.jpg}" alt="" style="max-height: 100px" /></a>
+                        <a><img src="../static/img/logo/suppereme.jpg" th:src="@{/img/logo/suppereme.jpg}" alt="" style="max-height: 100px" /></a>
+                        <a><img src="../static/img/logo/uni.jpg" th:src="@{/img/logo/uni.jpg}" alt="" style="max-height: 100px" /></a>
+                        <a><img src="../static/img/logo/dg.png" th:src="@{/img/logo/dg.png}" alt="" style="max-height: 100px" /></a>
+                        <a><img src="../static/img/logo/gucci.png" th:src="@{/img/logo/gucci.png}" alt="" style="max-height: 100px" /></a>
+
+                </div>
+                </marquee>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" style="margin-top: 20px">
+                <div class="row" style="background-color: white">
+                    <p>Trang chá»§ > Thá»i trang</p>
+                    <hr style="margin: 10px 20px 10px 0px" />
+
+                    <ul id="tree1">
+                        <li><a href="#">Thá»i Trang Ná»¯</a>
+                            <ul>
+                                <li>Sáº£n pháº©m má»›i</li>
+                                <li>Sáº£n pháº©m Ä‘áº·c biá»‡t
+                                    <ul>
+                                        <li>Ão
+                                            <ul>
+                                                <li>Ão sÆ¡ mi</li>
+                                                <li>Ão phÃ´ng</li>
+                                                <li>Ão tank top</li>
+                                            </ul>
+                                        </li>
+                                        <li>VÃ¡y</li>
+                                    </ul>
+                                </li>
+                                <li>Sáº£n pháº©m khuyáº¿n mÃ£i</li>
+                            </ul>
+                        </li>
+                        <li>Thá»i Trang Nam
+                            <ul>
+                                <li>Sáº£n pháº©m má»›i</li>
+                                <li>Sáº£n pháº©m Ä‘áº·c biá»‡t
+                                    <ul>
+                                        <li>Ão
+                                            <ul>
+                                                <li>Ão sÆ¡ mi</li>
+                                                <li>Ão phÃ´ng</li>
+                                                <li>Ão tank top</li>
+                                            </ul>
+                                        </li>
+                                        <li>Quáº§n</li>
+                                    </ul>
+                                </li>
+                                <li>Sáº£n pháº©m khuyáº¿n mÃ£i</li>
+                            </ul>
+                        </li>
+                        <li>Thá»i Trang BÃ© Trai
+                            <ul>
+                                <li>Sáº£n pháº©m má»›i</li>
+                                <li>Khuyáº¿n mÃ£i</li>
+                            </ul>
+                        </li>
+                        <li>Thá»i Trang BÃ© GÃ¡i
+                            <ul>
+                                <li>Sáº£n pháº©m má»›i</li>
+                                <li>Khuyáº¿n mÃ£i</li>
+                            </ul>
+                        </li>
+                        <li>Phá»¥ kiá»‡n
+                            <ul>
+                                <li>KÃ­nh máº¯t</li>
+                                <li>Trang sá»©c</li>
+                                <li>TÃºi xÃ¡ch/ Ba lÃ´</li>
+                                <li>GiÃ y</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-18" style="padding-top: 80px">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/kid/kid_shirt_1.jpg" th:src="@{/img/kid/kid_shirt_1.jpg}" alt=""
+                                     style="width: 200px; height: 245px"/>
+
+                            </div>
+                            <h2>
+                                <a href="">Ão choÃ ng bÃ© gÃ¡i</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/kid/kid_dress_1.jpg" th:src="@{/img/kid/kid_dress_1.jpg}"
+                                     alt=""/>
+                            </div>
+                            <h2>
+                                <a href="">VÃ¡y bÃ© gÃ¡i</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/kid/kid_coat_3.jpg" th:src="@{/img/kid/kid_coat_3.jpg}" alt=""/>
+                            </div>
+                            <h2>
+                                <a href="">Ão dáº¡ bÃ© gÃ¡i</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/women/woman_dress_1.jpg"
+                                     th:src="@{/img/women/woman_dress_1.jpg}" alt=""/>
+                            </div>
+                            <h2>
+                                <a href="">VÃ¡y sÆ¡ mi</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/women/woman_dress_2.jpg"
+                                     th:src="@{/img/women/woman_dress_2.jpg}" alt=""/>
+                            </div>
+                            <h2>
+                                <a href="">VÃ¡y suÃ´ng</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/women/woman_dress_3.jpg"
+                                     th:src="@{/img/women/woman_dress_3.jpg}" alt=""/>
+                            </div>
+                            <h2>
+                                <a href="">VÃ¡y suÃ´ng</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/men/man_coat_1.jpg" th:src="@{/img/men/man_coat_1.jpg}" alt=""/>
+                            </div>
+                            <h2>
+                                <a href="">Ão vest nam</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/men/man_jean_1.jpg" th:src="@{/img/men/man_jean_1.jpg}" alt=""/>
+                            </div>
+                            <h2>
+                                <a href="">Ão khoÃ¡c jean</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <img src="../static/img/men/men_shirt_1.jpg" th:src="@{/img/men/men_shirt_1.jpg}"
+                                     alt=""/>
+                            </div>
+                            <h2>
+                                <a href="">Ão sÆ¡ mi nam</a>
+                            </h2>
+                            <div class="product-carousel-price">
+                                <ins>$899.00</ins>
+                                <del>$999.00</del>
+                            </div>
+
+                            <div class="product-option-shop">
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                   rel="nofollow" href="/canvas/shop/fashion.html?add-to-cart=70">ThÃªm giá» hÃ ng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-pagination text-center">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">5</a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="layout::footer"></footer>
+<!--<script src="https://code.jquery.com/jquery.min.js" th:src="@{/jquery.min.js}"></script>-->
+<script src="../static/js/jquery-2.1.1.js" th:src="@{/js/jquery-2.1.1.js}"></script>
+<!-- Bootstrap JS form CDN -->
+<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" th:src="@{/bootstrap/3.2.0/js/bootstrap.min.js}" ></script>-->
+<script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<!-- jQuery sticky menu -->
+<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
+<script src="../static/js/jquery.sticky.js" th:src="@{/js/jquery.sticky.js}"></script>
+
+<!-- jQuery easing -->
+<script src="../static/js/jquery.easing.1.3.min.js" th:src="@{/js/jquery.easing.1.3.min.js}"></script>
+
+<!-- Main Script -->
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+
+<script src="../static/js/verticalMenu.js" th:src="@{/js/verticalMenu.js}"></script>
+</th:block>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="index::head">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css" th:href="@{/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css}"/>
+</head>
+<body>
+<header th:replace="adminIndex::header">
+</header>
+<section style="background-color: whitesmoke">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3" >
+      <div class="contact-caption clearfix" style="margin-top: 30%; margin-bottom: 5%">
+        <div class="col-md-10 col-md-offset-1 contact-form">
+          <h3 style="text-align: center; font-size: 50px">My Profile</h3>
+
+          <form class="form-horizontal" th:object="${account}" th:action="@{/bookDoctor/admin/changeProfile}" method="POST">
+            <input name="id" type="hidden" th:value="${account.id}" />
+            <input name="password" type="hidden" th:value="${account.password}" />
+            <div class="form-group" style="margin-top: 2%">
+              <label for="name" class="col-sm-3 control-label"><b>User Name</b></label>
+              <div class="col-sm-9">
+                <input name="userName" type="text" id="name" th:value="${account.userName}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fullname" class="col-sm-3 control-label"><b>Full Name</b></label>
+              <div class="col-sm-9">
+                <input name="fullName" id="fullname" type="text" th:value="${account.fullName}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-3 control-label"><b>Email</b></label>
+              <div class="col-sm-9">
+                <input name="email" id="email" type="email" th:value="${account.email}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="col-sm-3 control-label"><b>Phone</b></label>
+              <div class="col-sm-9">
+                <input name="phone" type="text" th:value="${account.phone}" id="phone" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-1 control-label"></label>
+              <div class="col-sm-11">
+                <div class="col-sm-5">
+                  <a th:href="@{/bookDoctor/OpenChangePwd}" style="color: black; margin-left: 25%">Đổi mật khẩu</a>
+                </div>
+                <div class="col-sm-7">
+                  <input class="submit-btn" type="submit" value="Lưu"/>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer th:replace="index::footer"></footer>
+</body>
+</html>

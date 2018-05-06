@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="index::head">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css" th:href="@{/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css}"/>
+</head>
+<body>
+<header th:replace="index::header">
+</header>
+<section style="background-color: whitesmoke">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3" >
+      <div class="contact-caption clearfix" style="margin-top: 23%">
+        <div class="col-md-10 col-md-offset-1 contact-form">
+          <h3 style="text-align: center; font-size: 50px">ĐẶT LỊCH</h3>
+
+          <form class="form" th:object="${patient}" th:action="@{/bookDoctor/addPatient}" method="POST">
+            <input name="name" type="text" placeholder="Tên" />
+            <input name="email" type="email" placeholder="Email" />
+            <input name="phone" type="text" placeholder="Số điện thoại:" />
+            <div class="row">
+              <div class="col-md-5">
+                <label>
+                  <input name="day" type="date"/>
+                </label>
+              </div>
+              <div class="col-md-7">
+                <select name="classifyPatient" style="margin-top: 5%" class="selectpicker">
+                  <optgroup label="Khám chữa bênh ngoại trú">
+                    <option value="NULL">chọn dịch vụ</option>
+                    <option value="Da liễu">Da liễu</option>
+                    <option value="Hô Hấp">Hô hấp</option>
+                    <option value="Mắt">Mắt</option>
+                    <option value="Nội tiết">Nội tiết</option>
+                    <option value="Phổi">Phổi</option>
+                    <option value="Phụ khoa">Phụ khoa</option>
+                    <option value="Tạo hình thẩm mĩ">Tạo hình thẩm mĩ</option>
+                    <option value="Tai mũi họng">Tai mũi họng</option>
+                    <option value="Tiết niệu">Tiết niệu</option>
+                    <option value="Tiêu hóa - gan mật">Tiêu hóa - gan mật</option>
+                    <option value="Xương khớp">Xương khớp</option>
+                    <option value="Nội tim mạch">Nội tim mạch</option>
+                    <option value="Ngoại">Ngoại</option>
+                    <option value="Răng hàm mặt">Răng hàm mặt</option>
+                    <option value="Di ứng, miễn dịch lâm sàng">Dị ứng, miễn dịch lâm sàng</option>
+                    <option value="Y học cổ truyền">Y học cổ truyền</option>
+                    <option value="Nhi">Nhi</option>
+                    <option value="Dinh dưỡng">Dinh dưỡng</option>
+                  </optgroup>
+                  <optgroup label="khám sức khỏe định kì">
+                    <option value="Khám tổng quát">Khám tổng quát</option>
+                  </optgroup>
+                  <optgroup label="Khác">
+                    <option value="Tái khám">Tái khám</option>
+                    <option value="Không rõ">Không rõ</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+            <textarea class="message" name="describes" id="message" cols="30" rows="10" placeholder="Mô tả triệu chứng,..."></textarea>
+            <input class="submit-btn" type="submit" value="TIẾP"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer th:replace="index::footer"></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js" th:src="@{/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js" th:src="@{/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js}"></script>
+</body>
+</html>

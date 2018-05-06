@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="index::head">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css" th:href="@{/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css}"/>
+</head>
+<body>
+<header th:replace="adminIndex::header">
+</header>
+<section style="background-color: whitesmoke">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3" >
+      <div class="contact-caption clearfix" style="margin-top: 35%; margin-bottom: 10%">
+        <div class="col-md-10 col-md-offset-1 contact-form">
+          <h3 style="text-align: center; font-size: 30px">Change Password</h3>
+
+          <form class="form-horizontal" th:object="${account}" th:action="@{/bookDoctor/admin/changePassword}" method="POST">
+            <input name="id" type="hidden" th:value="${account.id}" />
+            <div class="form-group" style="margin-top: 2%">
+                <input type="password" class="form-control" name="password"
+                       placeholder="Old password"/>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="newPwd"
+                       name="resetToken" placeholder="New password"/>
+            </div>
+            <div class="form-group">
+
+                <input type="password" class="form-control" id="confirmPwd"
+                       placeholder="Confirm Password"/>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-5 control-label"></label>
+              <div class="col-sm-7">
+                <a th:href="@{admin}"><button type="button" class="btn btn-default">Cancel</button></a>
+                <button type="submit" class="btn btn-info">Save Changes</button>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer th:replace="index::footer"></footer>
+</body>
+</html>

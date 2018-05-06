@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="index::head">
+</head>
+<body>
+<header th:replace="index::header">
+</header>
+<section style="background-color: whitesmoke">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2" style="margin-top: 10%;" >
+          <h3 style="text-align: center; font-size: 30px">Chọn bác sĩ và thời gian</h3>
+          <table class="table table-bordered" th:object="${account}">
+            <thead>
+            <tr>
+              <th>STT</th>
+              <th>Bác sĩ</th>
+              <th>Đã có lịch</th>
+              <th>Đặt giờ bắt đầu khám <br style="font-size: 5px"/>(Nên đặt cách 30' - nghỉ trưa: 12-13)</th>
+              <th>Ghi chú</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="account, iterStat : ${account}">
+              <td th:text="${iterStat.count}"></td>
+              <td th:text="${account.fullName}"></td>
+              <td>
+                <ul>
+                  <li th:each="item : ${account.orders}" th:text="${item.hour}"></li>
+                </ul>
+              </td>
+              <td>
+                <form th:action="@{/bookDoctor/done/{id}(id=${account.id})/{day}(day=${account.orderDay})}" method="POST">
+                  <input type="hidden" name="userName" th:value="${}" />
+                  <input type="hidden" name="phone" th:value="${question.phone}" />
+                  <input type="hidden" name="email" th:value="${question.email}" />
+                  <input type="hidden" name="content" th:value="${question.content}" />
+                  <div class="col-md-8">
+                    <input type="text" name="respondent" style="border: none; margin-top: 3%; background-color: whitesmoke" placeholder="Nhập giờ " />
+                  </div>
+                  <div class="col-md-4">
+                    <input class="submit-btn" type="submit" value="Đặt lịch" style="margin-top: 1%"/>
+                  </div>
+                </form>
+              </td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</section>
+<footer th:replace="index::footer"></footer>
+</body>
+</html>
