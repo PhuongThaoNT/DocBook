@@ -1,2 +1,3 @@
 This is ver2 of the project about book a doctor. 
-I've implemented it for my intern term
+I've implemented it for my intern term.
+I utilized Spring Boot, Spring JPA, Spring Security, and Thymeleaf in this project.
